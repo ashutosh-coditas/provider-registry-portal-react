@@ -1,0 +1,26 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--pp-space-6);
+  max-width: 880px;
+}
+
+.dateRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: var(--pp-space-3);
+}
+
+.dateField {
+  flex: 1 1 220px;
+  max-width: 280px;
+}
+
+.dateActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--pp-space-3);
+  // Line up with the input (label height + gap)
+  padding-top: 28px;
+}

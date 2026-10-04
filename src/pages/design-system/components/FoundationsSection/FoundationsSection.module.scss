@@ -1,0 +1,133 @@
+.colorGroups {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--pp-space-6);
+}
+
+.colorGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--pp-space-2);
+}
+
+.groupTitle {
+  @include label-caps;
+}
+
+.swatchRow {
+  display: flex;
+  align-items: center;
+  gap: var(--pp-space-3);
+}
+
+.swatch {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--pp-border);
+  border-radius: var(--pp-radius-md);
+}
+
+.token {
+  color: var(--pp-text-secondary);
+  font-family: var(--pp-font-mono);
+  font-size: 12px;
+}
+
+.typeList {
+  display: flex;
+  flex-direction: column;
+}
+
+.typeRow {
+  display: grid;
+  gap: var(--pp-space-1) var(--pp-space-6);
+  align-items: baseline;
+  padding: var(--pp-space-3) 0;
+  border-bottom: 1px solid var(--pp-border);
+
+  &:last-child {
+    border-bottom: 0;
+  }
+
+  @include respond-to('md') {
+    grid-template-columns: 200px minmax(0, 1fr);
+  }
+}
+
+.typeMeta {
+  display: flex;
+  flex-direction: column;
+  color: var(--pp-text-secondary);
+  @include text('xs');
+
+  strong {
+    color: var(--pp-text);
+    font-weight: var(--pp-font-semibold);
+  }
+}
+
+.typeSample {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.h1 {
+  @include heading('h1');
+}
+
+.h3 {
+  @include heading('h3');
+}
+
+.h5 {
+  @include heading('h5');
+}
+
+.body {
+  @include text('sm');
+}
+
+.small {
+  color: var(--pp-text-secondary);
+  @include text('xs');
+}
+
+.label {
+  @include label-caps;
+}
+
+.scaleRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: var(--pp-space-6);
+}
+
+.spaceItem,
+.radiusItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--pp-space-2);
+}
+
+.spaceBar {
+  height: 24px;
+  border-radius: 2px;
+  background: var(--pp-primary);
+}
+
+.radiusBox,
+.shadowBox {
+  width: 56px;
+  height: 56px;
+  border: 1px solid var(--pp-border-strong);
+  background: var(--pp-primary-subtle);
+}
+
+.shadowBox {
+  border-color: var(--pp-border);
+  border-radius: var(--pp-radius-lg);
+  background: var(--pp-bg-surface);
+}

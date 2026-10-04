@@ -1,0 +1,66 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--pp-space-6);
+  scroll-margin-top: 88px;
+}
+
+.sectionHeader {
+  display: flex;
+  flex-direction: column;
+  gap: var(--pp-space-1);
+  padding-bottom: var(--pp-space-4);
+  border-bottom: 1px solid var(--pp-border);
+}
+
+.sectionTitle {
+  @include heading('h3');
+}
+
+.sectionDescription {
+  max-width: 70ch;
+  color: var(--pp-text-secondary);
+  @include text('sm');
+}
+
+.block {
+  display: grid;
+  gap: var(--pp-space-4);
+
+  @include respond-to('xl') {
+    grid-template-columns: 240px minmax(0, 1fr);
+    gap: var(--pp-space-8);
+  }
+}
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--pp-space-1);
+}
+
+.title {
+  @include heading('h6');
+}
+
+.usage {
+  color: var(--pp-text-secondary);
+  @include text('xs');
+}
+
+.preview {
+  display: flex;
+  flex-direction: column;
+  gap: var(--pp-space-4);
+  min-width: 0;
+  padding: var(--pp-space-6);
+  border: 1px solid var(--pp-border);
+  border-radius: var(--pp-radius-xl);
+  background: var(--pp-bg-surface);
+}
+
+.inline {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}

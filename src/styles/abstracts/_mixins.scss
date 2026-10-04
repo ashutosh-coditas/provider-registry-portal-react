@@ -1,0 +1,136 @@
+@use 'sass:list';
+@use 'sass:map';
+@use 'variables' as *;
+
+/// Min-width query: @include respond-to('md') { ... }
+@mixin respond-to($name) {
+  @if not map.has-key($breakpoints, $name) {
+    @error 'Unknown breakpoint `#{$name}`. Use one of: #{map.keys($breakpoints)}';
+  }
+  @media (min-width: map.get($breakpoints, $name)) {
+    @content;
+  }
+}
+
+/// Max-width query (below a breakpoint): @include respond-below('md') { ... }
+@mixin respond-below($name) {
+  @media (max-width: (map.get($breakpoints, $name) - 0.02px)) {
+    @content;
+  }
+}
+
+@mixin reduced-motion {
+  @media (prefers-reduced-motion: reduce) {
+    @content;
+  }
+}
+
+@mixin focus-ring {
+  outline: none;
+  box-shadow: var(--pp-focus-ring);
+}
+
+/// Heading style h1–h6 (Urbanist, heading color).
+@mixin heading($level) {
+  $size: map.get($heading-scale, $level);
+  margin: 0;
+  color: var(--pp-text-heading);
+  font-family: var(--pp-font-heading);
+  font-weight: var(--pp-font-bold);
+  font-size: list.nth($size, 1);
+  line-height: list.nth($size, 2);
+  text-wrap: balance;
+
+  @if list.index(('h1', 'h2', 'h3'), $level) {
+    letter-spacing: -0.01em;
+  }
+}
+
+/// Body text: @include text('sm', var(--pp-font-medium))
+@mixin text($size: 'md', $weight: var(--pp-font-regular)) {
+  $scale: map.get($text-scale, $size);
+  font-family: var(--pp-font-body);
+  font-weight: $weight;
+  font-size: list.nth($scale, 1);
+  line-height: list.nth($scale, 2);
+}
+
+/// Small uppercase label (table headers, eyebrows).
+@mixin label-caps {
+  font-family: var(--pp-font-body);
+  font-weight: var(--pp-font-semibold);
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--pp-text-secondary);
+}
+
+@mixin truncate {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@mixin reset-button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+/// Card surface: background, border, radius.
+@mixin surface($radius: var(--pp-radius-xl)) {
+  background: var(--pp-bg-surface);
+  border: 1px solid var(--pp-border);
+  border-radius: $radius;
+}
+
+/// Shared look of text inputs, selects and textareas. States: hover, focus, invalid, disabled.
+@mixin control {
+  width: 100%;
+  min-height: var(--pp-control-md);
+  padding: 0 var(--pp-space-3);
+  border: 1px solid var(--pp-border-control);
+  border-radius: var(--pp-radius-md);
+  background: var(--pp-bg-surface);
+  color: var(--pp-text);
+  font-family: var(--pp-font-body);
+  font-size: 14px;
+  line-height: 22px;
+  transition:
+    border-color var(--pp-duration-fast) ease,
+    box-shadow var(--pp-duration-fast) ease;
+
+  &::placeholder {
+    color: var(--pp-text-muted);
+  }
+
+  &:hover:not(:disabled, [aria-invalid='true']) {
+    border-color: var(--pp-primary);
+  }
+
+  &:focus-visible {
+    outline: none;
+    border-color: var(--pp-border-focus);
+    box-shadow: var(--pp-focus-ring);
+  }
+
+  &[aria-invalid='true'] {
+    border-color: var(--pp-danger);
+
+    &:focus-visible {
+      box-shadow: var(--pp-focus-ring-danger);
+    }
+  }
+
+  &:disabled,
+  &[readonly] {
+    background: var(--pp-bg-muted);
+    color: var(--pp-text-secondary);
+    cursor: not-allowed;
+  }
+}

@@ -1,0 +1,121 @@
+.page {
+  min-height: 100vh;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: var(--pp-z-sticky);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--pp-space-4);
+  height: var(--pp-topbar-height);
+  padding: 0 var(--pp-space-4);
+  border-bottom: 1px solid var(--pp-border);
+  background: color-mix(in srgb, var(--pp-bg-surface) 88%, transparent);
+  backdrop-filter: saturate(1.4) blur(8px);
+
+  @include respond-to('md') {
+    padding: 0 var(--pp-space-8);
+  }
+}
+
+.brand,
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--pp-space-3);
+}
+
+.divider {
+  display: none;
+  width: 1px;
+  height: 20px;
+  background: var(--pp-border-strong);
+
+  @include respond-to('sm') {
+    display: block;
+  }
+}
+
+.label {
+  display: none;
+  color: var(--pp-text-secondary);
+  @include text('sm', var(--pp-font-semibold));
+
+  @include respond-to('sm') {
+    display: inline;
+  }
+}
+
+.body {
+  display: grid;
+  max-width: 1400px;
+  margin: 0 auto;
+
+  @include respond-to('lg') {
+    grid-template-columns: 220px minmax(0, 1fr);
+  }
+}
+
+.nav {
+  display: flex;
+  gap: var(--pp-space-1);
+  padding: var(--pp-space-4);
+  overflow-x: auto;
+
+  @include respond-to('lg') {
+    position: sticky;
+    top: var(--pp-topbar-height);
+    flex-direction: column;
+    align-self: start;
+    padding: var(--pp-space-8) var(--pp-space-4);
+  }
+}
+
+.navLink {
+  flex-shrink: 0;
+  padding: var(--pp-space-2) var(--pp-space-3);
+  border-radius: var(--pp-radius-md);
+  color: var(--pp-text-secondary);
+  text-decoration: none;
+  @include text('sm', var(--pp-font-medium));
+
+  &:hover {
+    background: var(--pp-bg-hover);
+    color: var(--pp-primary-text);
+  }
+
+  &:focus-visible {
+    @include focus-ring;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--pp-space-16);
+  min-width: 0;
+  padding: var(--pp-space-6) var(--pp-space-4) var(--pp-space-16);
+
+  @include respond-to('md') {
+    padding: var(--pp-space-8) var(--pp-space-8) var(--pp-space-16);
+  }
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  gap: var(--pp-space-2);
+}
+
+.title {
+  @include heading('h2');
+}
+
+.lede {
+  max-width: 70ch;
+  color: var(--pp-text-secondary);
+  @include text('md');
+}

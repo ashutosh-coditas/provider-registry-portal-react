@@ -1,0 +1,58 @@
+.iconButton {
+  @include reset-button;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 1px solid transparent;
+  border-radius: var(--pp-radius-md);
+  color: var(--pp-text-secondary);
+  transition:
+    background var(--pp-duration-fast) ease,
+    color var(--pp-duration-fast) ease;
+
+  &:focus-visible {
+    @include focus-ring;
+  }
+
+  &:disabled {
+    color: var(--pp-disabled-text);
+    cursor: not-allowed;
+  }
+}
+
+.sm {
+  width: var(--pp-control-sm);
+  height: var(--pp-control-sm);
+}
+
+.md {
+  width: var(--pp-control-md);
+  height: var(--pp-control-md);
+}
+
+.ghost:hover:not(:disabled) {
+  background: var(--pp-primary-subtle);
+  color: var(--pp-primary-text);
+}
+
+.secondary {
+  border-color: var(--pp-border-strong);
+  background: var(--pp-bg-surface);
+
+  &:hover:not(:disabled) {
+    background: var(--pp-bg-hover);
+    color: var(--pp-primary-text);
+  }
+}
+
+.danger {
+  &:hover:not(:disabled) {
+    background: var(--pp-danger-subtle);
+    color: var(--pp-danger);
+  }
+
+  &:focus-visible {
+    box-shadow: var(--pp-focus-ring-danger);
+  }
+}

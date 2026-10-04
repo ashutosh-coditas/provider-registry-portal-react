@@ -1,0 +1,63 @@
+.accordion {
+  @include surface(var(--pp-radius-lg));
+  overflow: hidden;
+}
+
+.item + .item {
+  border-top: 1px solid var(--pp-border);
+}
+
+.summary {
+  display: flex;
+  align-items: center;
+  gap: var(--pp-space-3);
+  padding: var(--pp-space-4) var(--pp-space-5);
+  background: var(--pp-bg-surface-alt);
+  list-style: none;
+  cursor: pointer;
+  transition: background var(--pp-duration-fast) ease;
+
+  &::-webkit-details-marker {
+    display: none;
+  }
+
+  &:hover {
+    background: var(--pp-bg-hover);
+  }
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: inset var(--pp-focus-ring);
+  }
+}
+
+.title {
+  flex: 1;
+  min-width: 0;
+  color: var(--pp-text-heading);
+  font-family: var(--pp-font-heading);
+  font-weight: var(--pp-font-bold);
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: var(--pp-space-2);
+}
+
+.chevron {
+  flex-shrink: 0;
+  color: var(--pp-text-secondary);
+  transition: transform var(--pp-duration-base) var(--pp-ease);
+
+  .item[open] & {
+    transform: rotate(180deg);
+  }
+}
+
+.content {
+  padding: var(--pp-space-5);
+  border-top: 1px solid var(--pp-border);
+}

@@ -1,0 +1,84 @@
+.tabs {
+  display: flex;
+  gap: var(--pp-space-1);
+  max-width: 100%;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.tab {
+  @include reset-button;
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 6px;
+  color: var(--pp-text-secondary);
+  white-space: nowrap;
+  transition:
+    color var(--pp-duration-fast) ease,
+    background var(--pp-duration-fast) ease,
+    border-color var(--pp-duration-fast) ease;
+  @include text('sm', var(--pp-font-medium));
+
+  &:hover {
+    color: var(--pp-text);
+  }
+
+  &:focus-visible {
+    @include focus-ring;
+  }
+}
+
+// Underline: page-level sections
+.underline {
+  border-bottom: 1px solid var(--pp-border);
+
+  .tab {
+    margin-bottom: -1px;
+    padding: var(--pp-space-3) var(--pp-space-4);
+    border-bottom: 2px solid transparent;
+    border-radius: var(--pp-radius-sm) var(--pp-radius-sm) 0 0;
+  }
+
+  .selected {
+    border-bottom-color: var(--pp-primary);
+    color: var(--pp-primary-text);
+    font-weight: var(--pp-font-semibold);
+  }
+}
+
+// Pills: compact filters / switchers
+.pills {
+  padding: 4px;
+  border: 1px solid var(--pp-border);
+  border-radius: var(--pp-radius-lg);
+  background: var(--pp-bg-surface);
+
+  .tab {
+    padding: 6px var(--pp-space-3);
+    border-radius: var(--pp-radius-md);
+  }
+
+  .selected {
+    background: var(--pp-primary-subtle);
+    color: var(--pp-primary-text);
+    font-weight: var(--pp-font-semibold);
+  }
+}
+
+.count {
+  min-width: 20px;
+  padding: 0 6px;
+  border-radius: var(--pp-radius-full);
+  background: var(--pp-bg-muted);
+  color: var(--pp-text-secondary);
+  font-size: 11px;
+  line-height: 18px;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.countAlert {
+  background: var(--pp-danger-subtle);
+  color: var(--pp-danger);
+}

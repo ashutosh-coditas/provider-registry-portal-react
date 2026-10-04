@@ -1,0 +1,59 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.label {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 4px;
+  color: var(--pp-text);
+  @include text('sm', var(--pp-font-medium));
+}
+
+.required {
+  color: var(--pp-danger);
+}
+
+.optional {
+  color: var(--pp-text-muted);
+  font-weight: var(--pp-font-regular);
+}
+
+.meta {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--pp-space-3);
+}
+
+.hint,
+.error {
+  @include text('xs');
+}
+
+.hint {
+  color: var(--pp-text-secondary);
+}
+
+.error {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 4px;
+  color: var(--pp-danger);
+
+  svg {
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+}
+
+.aside {
+  margin-left: auto;
+  color: var(--pp-text-muted);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  @include text('xs');
+}

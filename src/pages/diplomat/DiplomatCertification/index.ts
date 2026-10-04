@@ -1,0 +1,1 @@
+export { DiplomatCertificationPage } from './DiplomatCertification'

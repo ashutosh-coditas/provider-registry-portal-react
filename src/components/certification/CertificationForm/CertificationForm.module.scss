@@ -1,0 +1,22 @@
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--pp-space-6);
+}
+
+.card {
+  gap: var(--pp-space-8);
+}
+
+.loading {
+  gap: var(--pp-space-5);
+}
+
+.loadingGrid {
+  display: grid;
+  gap: var(--pp-space-5);
+
+  @include respond-to('md') {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

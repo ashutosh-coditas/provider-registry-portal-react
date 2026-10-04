@@ -1,0 +1,52 @@
+.progress {
+  display: flex;
+  align-items: center;
+  gap: var(--pp-space-3);
+  min-width: 0;
+}
+
+.track {
+  flex: 1;
+  min-width: 48px;
+  overflow: hidden;
+  border-radius: var(--pp-radius-full);
+  background: var(--pp-primary-subtle-hover);
+}
+
+.sm {
+  height: 6px;
+}
+
+.md {
+  height: 8px;
+}
+
+.fill {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  transition: width var(--pp-duration-slow) var(--pp-ease);
+}
+
+.primary {
+  background: var(--pp-primary);
+}
+
+.success {
+  background: var(--pp-success-solid);
+}
+
+.warning {
+  background: var(--pp-warning-solid);
+}
+
+.danger {
+  background: var(--pp-danger-solid);
+}
+
+.value {
+  flex-shrink: 0;
+  color: var(--pp-text);
+  font-variant-numeric: tabular-nums;
+  @include text('sm', var(--pp-font-semibold));
+}

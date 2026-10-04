@@ -1,0 +1,65 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid transparent;
+  border-radius: var(--pp-radius-full);
+  font-family: var(--pp-font-body);
+  font-weight: var(--pp-font-semibold);
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.sm {
+  padding: 1px 8px;
+  font-size: 11px;
+  line-height: 16px;
+}
+
+.md {
+  padding: 3px 10px;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: var(--pp-radius-full);
+  background: currentColor;
+}
+
+.neutral {
+  border-color: var(--pp-border);
+  background: var(--pp-bg-muted);
+  color: var(--pp-text-secondary);
+}
+
+.primary {
+  background: var(--pp-primary-subtle);
+  color: var(--pp-primary-text);
+}
+
+.success {
+  border-color: var(--pp-success-border);
+  background: var(--pp-success-subtle);
+  color: var(--pp-success);
+}
+
+.warning {
+  border-color: var(--pp-warning-border);
+  background: var(--pp-warning-subtle);
+  color: var(--pp-warning);
+}
+
+.danger {
+  border-color: var(--pp-danger-border);
+  background: var(--pp-danger-subtle);
+  color: var(--pp-danger);
+}
+
+.info {
+  border-color: var(--pp-info-border);
+  background: var(--pp-info-subtle);
+  color: var(--pp-info);
+}

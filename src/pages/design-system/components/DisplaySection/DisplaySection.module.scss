@@ -1,0 +1,63 @@
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: var(--pp-space-4);
+}
+
+.miniGrid {
+  display: grid;
+  flex: 1;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--pp-space-4);
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: var(--pp-space-4);
+}
+
+.toolbar {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nameCell {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--pp-space-3);
+}
+
+.nameText {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+
+  strong {
+    font-weight: var(--pp-font-semibold);
+  }
+
+  > span {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--pp-text-secondary);
+    @include text('xs');
+  }
+}
+
+.cycleCell {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--pp-space-2);
+}
+
+.muted {
+  color: var(--pp-text-muted);
+}
+
+.actions {
+  display: inline-flex;
+  gap: 2px;
+}

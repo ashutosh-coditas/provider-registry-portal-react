@@ -1,0 +1,6 @@
+.textarea {
+  @include control;
+  padding-top: var(--pp-space-2);
+  padding-bottom: var(--pp-space-2);
+  resize: vertical;
+}

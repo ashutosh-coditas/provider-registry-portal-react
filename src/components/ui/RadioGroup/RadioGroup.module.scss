@@ -1,0 +1,123 @@
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--pp-space-2);
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.legend {
+  display: inline-flex;
+  gap: 4px;
+  margin-bottom: 6px;
+  padding: 0;
+  color: var(--pp-text);
+  @include text('sm', var(--pp-font-medium));
+}
+
+.required {
+  color: var(--pp-danger);
+}
+
+.options {
+  display: flex;
+  gap: var(--pp-space-3);
+}
+
+.horizontal {
+  flex-wrap: wrap;
+}
+
+.vertical {
+  flex-direction: column;
+}
+
+// Each option is a bordered tile: larger hit area, clear selected state
+.option {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: var(--pp-space-3);
+  min-width: 120px;
+  padding: 10px 14px;
+  border: 1px solid var(--pp-border-strong);
+  border-radius: var(--pp-radius-md);
+  background: var(--pp-bg-surface);
+  cursor: pointer;
+  transition:
+    border-color var(--pp-duration-fast) ease,
+    background var(--pp-duration-fast) ease;
+
+  &:hover {
+    border-color: var(--pp-primary);
+  }
+
+  &:has(input:checked) {
+    border-color: var(--pp-primary);
+    background: var(--pp-primary-subtle);
+  }
+
+  &:has(input:disabled) {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+}
+
+.radio {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  margin: 2px 0 0;
+  border: 1.5px solid var(--pp-border-control);
+  border-radius: var(--pp-radius-full);
+  background: var(--pp-bg-surface);
+  appearance: none;
+  cursor: inherit;
+  transition:
+    border-color var(--pp-duration-fast) ease,
+    box-shadow var(--pp-duration-fast) ease;
+
+  &:checked {
+    border-color: var(--pp-primary);
+    box-shadow: inset 0 0 0 4px var(--pp-bg-surface);
+    background: var(--pp-primary);
+  }
+
+  &:focus-visible {
+    @include focus-ring;
+  }
+
+  &[aria-invalid='true'] {
+    border-color: var(--pp-danger);
+  }
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.label {
+  color: var(--pp-text);
+  @include text('sm', var(--pp-font-medium));
+}
+
+.description {
+  color: var(--pp-text-secondary);
+  @include text('xs');
+}
+
+.hint,
+.error {
+  @include text('xs');
+}
+
+.hint {
+  color: var(--pp-text-secondary);
+}
+
+.error {
+  color: var(--pp-danger);
+}

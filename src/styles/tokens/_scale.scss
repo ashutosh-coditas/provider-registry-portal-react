@@ -1,0 +1,57 @@
+// Tier 3 · Scale tokens: theme-independent sizes, type, motion and layering.
+
+:root {
+  // Spacing (4px grid)
+  --pp-space-1: 4px;
+  --pp-space-2: 8px;
+  --pp-space-3: 12px;
+  --pp-space-4: 16px;
+  --pp-space-5: 20px;
+  --pp-space-6: 24px;
+  --pp-space-8: 32px;
+  --pp-space-10: 40px;
+  --pp-space-12: 48px;
+  --pp-space-16: 64px;
+
+  // Radius
+  --pp-radius-sm: 4px;
+  --pp-radius-md: 8px;
+  --pp-radius-lg: 12px;
+  --pp-radius-xl: 16px;
+  --pp-radius-full: 9999px;
+
+  // Typography
+  --pp-font-heading: 'Urbanist', system-ui, 'Segoe UI', Roboto, sans-serif;
+  --pp-font-body: 'Inter', system-ui, 'Segoe UI', Roboto, sans-serif;
+  --pp-font-mono: ui-monospace, 'Cascadia Mono', Consolas, monospace;
+
+  --pp-font-regular: 400;
+  --pp-font-medium: 500;
+  --pp-font-semibold: 600;
+  --pp-font-bold: 700;
+  --pp-font-extrabold: 800;
+
+  // Controls
+  --pp-control-sm: 32px;
+  --pp-control-md: 40px;
+  --pp-control-lg: 48px;
+
+  // Layout
+  --pp-sidebar-width: 248px;
+  --pp-sidebar-width-collapsed: 72px;
+  --pp-topbar-height: 64px;
+  --pp-content-max: 1280px;
+
+  // Motion
+  --pp-duration-fast: 120ms;
+  --pp-duration-base: 180ms;
+  --pp-duration-slow: 260ms;
+  --pp-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+
+  // Layering
+  --pp-z-sticky: 20;
+  --pp-z-sidebar: 30;
+  --pp-z-dropdown: 40;
+  --pp-z-modal: 50;
+  --pp-z-toast: 60;
+}

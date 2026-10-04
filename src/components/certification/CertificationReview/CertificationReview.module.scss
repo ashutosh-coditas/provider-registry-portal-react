@@ -1,0 +1,9 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--pp-space-4);
+}
+
+.edit {
+  align-self: flex-start;
+}

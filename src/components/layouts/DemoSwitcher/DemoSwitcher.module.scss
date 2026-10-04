@@ -1,0 +1,20 @@
+.trigger {
+  padding: 6px var(--pp-space-3);
+  border: 1px dashed var(--pp-border-strong);
+  color: var(--pp-text-secondary);
+  @include text('xs', var(--pp-font-semibold));
+}
+
+.label {
+  display: none;
+
+  @include respond-to('md') {
+    display: inline;
+  }
+}
+
+.header {
+  max-width: 260px;
+  color: var(--pp-text-secondary);
+  @include text('xs');
+}

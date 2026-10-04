@@ -1,0 +1,194 @@
+.sidebar {
+  position: fixed;
+  inset: 0 auto 0 0;
+  z-index: var(--pp-z-sidebar);
+  display: flex;
+  flex-direction: column;
+  gap: var(--pp-space-6);
+  width: min(280px, 85vw);
+  padding: var(--pp-space-5) var(--pp-space-3);
+  border-right: 1px solid var(--pp-border);
+  background: var(--pp-bg-surface);
+  transform: translateX(-100%);
+  transition: transform var(--pp-duration-slow) var(--pp-ease);
+
+  @include respond-to('lg') {
+    position: sticky;
+    top: 0;
+    width: auto;
+    height: 100vh;
+    transform: none;
+    transition: padding var(--pp-duration-base) var(--pp-ease);
+  }
+}
+
+.mobileOpen {
+  box-shadow: var(--pp-shadow-lg);
+  transform: none;
+}
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: var(--pp-z-sidebar);
+  background: var(--pp-bg-overlay);
+  animation: fade-in var(--pp-duration-base) ease;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 40px;
+  padding: 0 var(--pp-space-2);
+}
+
+.nav {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--pp-space-5);
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--pp-space-1);
+}
+
+.groupTitle {
+  padding: 0 var(--pp-space-3) var(--pp-space-1);
+  @include label-caps;
+  @include truncate;
+}
+
+.dot {
+  flex-shrink: 0;
+  width: 8px;
+  height: 8px;
+  margin-left: auto;
+  border-radius: var(--pp-radius-full);
+}
+
+.success {
+  background: var(--pp-success-solid);
+}
+
+.warning {
+  background: var(--pp-warning-solid);
+}
+
+.danger {
+  background: var(--pp-danger-solid);
+  box-shadow: 0 0 0 3px var(--pp-danger-subtle);
+}
+
+.neutral {
+  background: var(--pp-border-control);
+}
+
+.link,
+.collapseButton {
+  display: flex;
+  align-items: center;
+  gap: var(--pp-space-3);
+  min-height: 44px;
+  padding: 0 var(--pp-space-3);
+  border-radius: var(--pp-radius-md);
+  color: var(--pp-text-secondary);
+  text-decoration: none;
+  transition:
+    background var(--pp-duration-fast) ease,
+    color var(--pp-duration-fast) ease;
+  @include text('sm', var(--pp-font-medium));
+
+  svg {
+    flex-shrink: 0;
+  }
+
+  &:hover {
+    background: var(--pp-bg-hover);
+    color: var(--pp-text);
+  }
+
+  &:focus-visible {
+    @include focus-ring;
+  }
+}
+
+.active {
+  background: var(--pp-primary-subtle);
+  color: var(--pp-primary-text);
+  font-weight: var(--pp-font-semibold);
+
+  &:hover {
+    background: var(--pp-primary-subtle-hover);
+    color: var(--pp-primary-text);
+  }
+}
+
+.collapseButton {
+  @include reset-button;
+  @include text('sm', var(--pp-font-medium));
+  color: var(--pp-text-muted);
+}
+
+.linkLabel {
+  @include truncate;
+}
+
+// Desktop icon rail
+.collapsed {
+  padding-right: var(--pp-space-3);
+  padding-left: var(--pp-space-3);
+
+  .brand {
+    justify-content: center;
+    padding: 0;
+  }
+
+  .link,
+  .collapseButton {
+    justify-content: center;
+    padding: 0;
+  }
+
+  .groupTitle {
+    @include respond-to('lg') {
+      height: 1px;
+      padding: 0;
+      overflow: hidden;
+      background: var(--pp-border);
+      color: transparent;
+    }
+  }
+
+  .dot {
+    @include respond-to('lg') {
+      position: absolute;
+      margin: -18px 0 0 18px;
+    }
+  }
+
+  .link {
+    position: relative;
+  }
+
+  .linkLabel {
+    @include respond-to('lg') {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+    }
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}

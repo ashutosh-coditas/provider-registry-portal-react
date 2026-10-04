@@ -1,0 +1,68 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--pp-space-6);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--pp-space-1);
+}
+
+.title {
+  @include heading('h3');
+}
+
+.subtitle {
+  color: var(--pp-text-secondary);
+  @include text('sm');
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--pp-space-5);
+}
+
+.passwordGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--pp-space-2);
+}
+
+.rules {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 4px var(--pp-space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.rule {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--pp-text-muted);
+  @include text('xs');
+}
+
+.ruleMet {
+  color: var(--pp-success);
+}
+
+.footer {
+  color: var(--pp-text-secondary);
+  text-align: center;
+  @include text('sm');
+
+  a {
+    font-weight: var(--pp-font-semibold);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

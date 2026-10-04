@@ -1,0 +1,139 @@
+// Tier 2 · Semantic tokens: what components use. Light on :root, dark via [data-theme='dark']
+// or the OS preference when no theme is chosen (data-theme absent).
+
+@mixin light-theme {
+  color-scheme: light;
+
+  // Backgrounds
+  --pp-bg-page: #f5f5fb;
+  --pp-bg-surface: var(--pp-white);
+  --pp-bg-surface-alt: #faf9ff;
+  --pp-bg-hover: var(--pp-purple-25);
+  --pp-bg-muted: var(--pp-graphite-50);
+  --pp-bg-overlay: rgb(36 36 106 / 50%);
+  --pp-bg-inverse: var(--pp-purple-950);
+
+  // Borders
+  --pp-border: var(--pp-purple-100);
+  --pp-border-strong: var(--pp-purple-200);
+  --pp-border-control: var(--pp-graphite-300);
+  --pp-border-focus: var(--pp-purple-700);
+
+  // Text
+  --pp-text-heading: var(--pp-purple-950);
+  --pp-text: var(--pp-graphite-950);
+  --pp-text-secondary: var(--pp-graphite-500);
+  --pp-text-muted: var(--pp-graphite-400);
+  --pp-text-inverse: var(--pp-white);
+  --pp-text-link: var(--pp-purple-800);
+
+  // Brand
+  --pp-primary: var(--pp-purple-700);
+  --pp-primary-hover: var(--pp-purple-800);
+  --pp-primary-pressed: var(--pp-purple-900);
+  --pp-primary-subtle: var(--pp-purple-50);
+  --pp-primary-subtle-hover: var(--pp-purple-100);
+  --pp-primary-text: var(--pp-purple-800);
+  --pp-on-primary: var(--pp-white);
+
+  // Intents: <intent> = text/icon, -subtle = background, -border = outline, -solid = filled bg
+  --pp-success: var(--pp-green-700);
+  --pp-success-subtle: var(--pp-green-50);
+  --pp-success-border: var(--pp-green-200);
+  --pp-success-solid: var(--pp-green-600);
+  --pp-warning: var(--pp-amber-700);
+  --pp-warning-subtle: var(--pp-amber-50);
+  --pp-warning-border: var(--pp-amber-200);
+  --pp-warning-solid: var(--pp-amber-500);
+  --pp-danger: var(--pp-red-700);
+  --pp-danger-subtle: var(--pp-red-50);
+  --pp-danger-border: var(--pp-red-200);
+  --pp-danger-solid: var(--pp-red-600);
+  --pp-danger-solid-hover: var(--pp-red-700);
+  --pp-info: var(--pp-blue-700);
+  --pp-info-subtle: var(--pp-blue-50);
+  --pp-info-border: var(--pp-blue-200);
+
+  // Disabled
+  --pp-disabled-bg: var(--pp-purple-50);
+  --pp-disabled-text: var(--pp-purple-300);
+
+  // Elevation
+  --pp-shadow-sm: 0 1px 2px rgb(36 36 106 / 6%);
+  --pp-shadow-md: 0 4px 16px rgb(93 93 246 / 14%), 0 1px 4px rgb(93 93 246 / 8%);
+  --pp-shadow-lg: 0 12px 36px rgb(36 36 106 / 14%), 0 2px 6px rgb(36 36 106 / 6%);
+  --pp-focus-ring: 0 0 0 3px rgb(93 93 246 / 35%);
+  --pp-focus-ring-danger: 0 0 0 3px rgb(220 38 38 / 30%);
+}
+
+@mixin dark-theme {
+  color-scheme: dark;
+
+  --pp-bg-page: #0e0e1c;
+  --pp-bg-surface: #15152a;
+  --pp-bg-surface-alt: #1a1a30;
+  --pp-bg-hover: #1e1e38;
+  --pp-bg-muted: #1c1c34;
+  --pp-bg-overlay: rgb(0 0 0 / 70%);
+  --pp-bg-inverse: #e2e2f0;
+
+  --pp-border: #2a2a4a;
+  --pp-border-strong: #3a3a5a;
+  --pp-border-control: #4a4a6e;
+  --pp-border-focus: #a0a4ff;
+
+  --pp-text-heading: #c4c6ff;
+  --pp-text: #e2e2f0;
+  --pp-text-secondary: #9898c0;
+  --pp-text-muted: #6a6a90;
+  --pp-text-inverse: var(--pp-purple-950);
+  --pp-text-link: #a0a4ff;
+
+  --pp-primary: #7f80f8;
+  --pp-primary-hover: #999bfa;
+  --pp-primary-pressed: #b3b6fb;
+  --pp-primary-subtle: #1e1e38;
+  --pp-primary-subtle-hover: #252540;
+  --pp-primary-text: #a0a4ff;
+  --pp-on-primary: #0e0e1c;
+
+  --pp-success: var(--pp-green-400);
+  --pp-success-subtle: var(--pp-green-950);
+  --pp-success-border: #14532d;
+  --pp-success-solid: var(--pp-green-600);
+  --pp-warning: var(--pp-amber-400);
+  --pp-warning-subtle: var(--pp-amber-950);
+  --pp-warning-border: #78350f;
+  --pp-warning-solid: var(--pp-amber-500);
+  --pp-danger: var(--pp-red-400);
+  --pp-danger-subtle: var(--pp-red-950);
+  --pp-danger-border: #7f1d1d;
+  --pp-danger-solid: var(--pp-red-600);
+  --pp-danger-solid-hover: var(--pp-red-700);
+  --pp-info: var(--pp-blue-400);
+  --pp-info-subtle: var(--pp-blue-950);
+  --pp-info-border: #1e3a8a;
+
+  --pp-disabled-bg: #22223c;
+  --pp-disabled-text: #5a5a80;
+
+  --pp-shadow-sm: 0 1px 2px rgb(0 0 0 / 30%);
+  --pp-shadow-md: 0 4px 20px rgb(0 0 0 / 28%), 0 1px 4px rgb(0 0 0 / 14%);
+  --pp-shadow-lg: 0 16px 40px rgb(0 0 0 / 45%), 0 2px 8px rgb(0 0 0 / 25%);
+  --pp-focus-ring: 0 0 0 3px rgb(160 164 255 / 45%);
+  --pp-focus-ring-danger: 0 0 0 3px rgb(248 113 113 / 40%);
+}
+
+:root {
+  @include light-theme;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    @include dark-theme;
+  }
+}
+
+:root[data-theme='dark'] {
+  @include dark-theme;
+}

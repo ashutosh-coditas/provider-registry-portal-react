@@ -1,0 +1,70 @@
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: var(--pp-z-sticky);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--pp-space-4);
+  height: var(--pp-topbar-height);
+  padding: 0 var(--pp-space-4);
+  border-bottom: 1px solid var(--pp-border);
+  background: color-mix(in srgb, var(--pp-bg-surface) 88%, transparent);
+  backdrop-filter: saturate(1.4) blur(8px);
+
+  @include respond-to('md') {
+    padding: 0 var(--pp-space-8);
+  }
+}
+
+.left,
+.right {
+  display: flex;
+  align-items: center;
+  gap: var(--pp-space-2);
+}
+
+.identity {
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+
+  @include respond-to('md') {
+    display: flex;
+  }
+}
+
+.name {
+  color: var(--pp-text);
+  @include text('sm', var(--pp-font-semibold));
+  line-height: 18px;
+}
+
+.role {
+  color: var(--pp-text-secondary);
+  @include text('xs');
+  line-height: 16px;
+}
+
+.chevron {
+  color: var(--pp-text-secondary);
+}
+
+.menuHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--pp-space-3);
+}
+
+.menuIdentity {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.username {
+  color: var(--pp-text-secondary);
+  @include text('xs');
+}

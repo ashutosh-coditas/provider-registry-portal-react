@@ -1,0 +1,89 @@
+.wrapper {
+  @include surface(var(--pp-radius-lg));
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  min-width: 640px;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+
+  th,
+  td {
+    padding: var(--pp-space-3) var(--pp-space-4);
+    border-bottom: 1px solid var(--pp-border);
+    vertical-align: middle;
+  }
+
+  th {
+    background: var(--pp-bg-surface-alt);
+    white-space: nowrap;
+    @include label-caps;
+  }
+
+  td {
+    color: var(--pp-text);
+    @include text('sm');
+  }
+
+  tbody tr:last-child td {
+    border-bottom: 0;
+  }
+
+  tbody tr {
+    transition: background var(--pp-duration-fast) ease;
+
+    &:hover {
+      background: var(--pp-bg-hover);
+    }
+  }
+}
+
+.left {
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
+}
+
+.sortButton {
+  @include reset-button;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  border-radius: var(--pp-radius-sm);
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+
+  &:hover {
+    color: var(--pp-text);
+  }
+
+  &:focus-visible {
+    @include focus-ring;
+  }
+}
+
+.sortIcon {
+  color: var(--pp-text-muted);
+
+  [aria-sort='ascending'] &,
+  [aria-sort='descending'] & {
+    color: var(--pp-primary);
+  }
+}
+
+.emptyCell {
+  padding: 0 !important;
+
+  tr:hover > & {
+    background: var(--pp-bg-surface);
+  }
+}

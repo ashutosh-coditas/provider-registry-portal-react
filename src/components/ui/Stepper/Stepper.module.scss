@@ -1,0 +1,152 @@
+.stepper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--pp-space-2);
+}
+
+.summary {
+  @include label-caps;
+
+  @include respond-to('md') {
+    display: none;
+  }
+}
+
+.list {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.item {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: var(--pp-space-3);
+  min-width: 0;
+
+  &:last-child {
+    flex: 0 0 auto;
+  }
+}
+
+.step {
+  @include reset-button;
+  display: flex;
+  align-items: center;
+  gap: var(--pp-space-3);
+  min-width: 0;
+  padding: 4px;
+  border-radius: var(--pp-radius-md);
+  text-align: left;
+  cursor: default;
+
+  @at-root button#{&} {
+    cursor: pointer;
+
+    &:hover .label {
+      color: var(--pp-primary-text);
+    }
+
+    &:focus-visible {
+      @include focus-ring;
+    }
+  }
+}
+
+.circle {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border: 1.5px solid var(--pp-border-strong);
+  border-radius: var(--pp-radius-full);
+  background: var(--pp-bg-surface);
+  color: var(--pp-text-secondary);
+  font-variant-numeric: tabular-nums;
+  transition:
+    background var(--pp-duration-base) ease,
+    border-color var(--pp-duration-base) ease;
+  @include text('sm', var(--pp-font-semibold));
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.label {
+  color: var(--pp-text-secondary);
+  @include text('sm', var(--pp-font-semibold));
+  @include truncate;
+}
+
+.description {
+  color: var(--pp-text-muted);
+  @include text('xs');
+  @include truncate;
+}
+
+.connector {
+  flex: 1;
+  min-width: 16px;
+  height: 2px;
+  border-radius: var(--pp-radius-full);
+  background: var(--pp-border-strong);
+}
+
+// ---- states
+.complete {
+  .circle {
+    border-color: var(--pp-success-solid);
+    background: var(--pp-success-solid);
+    color: var(--pp-white);
+  }
+
+  .label {
+    color: var(--pp-text);
+  }
+
+  .connector {
+    background: var(--pp-success-solid);
+  }
+}
+
+.current {
+  .circle {
+    border-color: var(--pp-primary);
+    background: var(--pp-primary);
+    color: var(--pp-on-primary);
+    box-shadow: 0 0 0 4px var(--pp-primary-subtle);
+  }
+
+  .label {
+    color: var(--pp-text-heading);
+  }
+}
+
+.error {
+  .circle {
+    border-color: var(--pp-danger-solid);
+    background: var(--pp-danger-solid);
+    color: var(--pp-white);
+  }
+
+  .label {
+    color: var(--pp-danger);
+  }
+}
+
+// Narrow screens: circles only, the current step's label stays visible
+@include respond-below('md') {
+  .item:not(.current) .text {
+    display: none;
+  }
+
+  .description {
+    display: none;
+  }
+}

@@ -1,0 +1,79 @@
+.alert {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: var(--pp-space-3);
+  padding: var(--pp-space-3) var(--pp-space-4);
+  border: 1px solid;
+  border-radius: var(--pp-radius-lg);
+}
+
+.icon {
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 200px;
+}
+
+.title {
+  color: var(--pp-text);
+  @include text('sm', var(--pp-font-semibold));
+}
+
+.text {
+  color: var(--pp-text-secondary);
+  @include text('sm');
+}
+
+.action {
+  display: flex;
+  align-items: center;
+  align-self: center;
+}
+
+.close {
+  margin: -4px -8px -4px 0;
+}
+
+.info {
+  border-color: var(--pp-info-border);
+  background: var(--pp-info-subtle);
+
+  .icon {
+    color: var(--pp-info);
+  }
+}
+
+.success {
+  border-color: var(--pp-success-border);
+  background: var(--pp-success-subtle);
+
+  .icon {
+    color: var(--pp-success);
+  }
+}
+
+.warning {
+  border-color: var(--pp-warning-border);
+  background: var(--pp-warning-subtle);
+
+  .icon {
+    color: var(--pp-warning);
+  }
+}
+
+.danger {
+  border-color: var(--pp-danger-border);
+  background: var(--pp-danger-subtle);
+
+  .icon,
+  .title {
+    color: var(--pp-danger);
+  }
+}

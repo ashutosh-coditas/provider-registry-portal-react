@@ -1,0 +1,11 @@
+.viewport {
+  position: fixed;
+  right: var(--pp-space-4);
+  bottom: calc(var(--pp-space-4) + env(safe-area-inset-bottom, 0px));
+  z-index: var(--pp-z-toast);
+  display: flex;
+  flex-direction: column;
+  gap: var(--pp-space-2);
+  width: min(400px, calc(100vw - 32px));
+  pointer-events: none;
+}

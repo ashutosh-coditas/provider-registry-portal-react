@@ -1,0 +1,76 @@
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--pp-space-3);
+}
+
+.range {
+  color: var(--pp-text-secondary);
+  font-variant-numeric: tabular-nums;
+  @include text('sm');
+
+  strong {
+    color: var(--pp-text);
+    font-weight: var(--pp-font-semibold);
+  }
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--pp-space-4);
+}
+
+.pageSize {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--pp-space-2);
+  color: var(--pp-text-secondary);
+  @include text('sm');
+}
+
+.pageSizeSelect {
+  @include control;
+  width: auto;
+  min-height: var(--pp-control-sm);
+  padding: 0 var(--pp-space-2);
+}
+
+.pages {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.page {
+  @include reset-button;
+  min-width: var(--pp-control-sm);
+  height: var(--pp-control-sm);
+  padding: 0 6px;
+  border-radius: var(--pp-radius-md);
+  color: var(--pp-text);
+  font-variant-numeric: tabular-nums;
+  @include text('sm', var(--pp-font-medium));
+
+  &:hover:not(.current) {
+    background: var(--pp-primary-subtle);
+  }
+
+  &:focus-visible {
+    @include focus-ring;
+  }
+}
+
+.current {
+  background: var(--pp-primary);
+  color: var(--pp-on-primary);
+}
+
+.ellipsis {
+  min-width: 24px;
+  color: var(--pp-text-muted);
+  text-align: center;
+}

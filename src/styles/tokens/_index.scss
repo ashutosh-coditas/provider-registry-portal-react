@@ -1,0 +1,4 @@
+// Design tokens: primitives → semantic (light/dark) → scale. Loaded once from globals.scss.
+@use 'primitives';
+@use 'theme';
+@use 'scale';

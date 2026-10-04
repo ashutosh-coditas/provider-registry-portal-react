@@ -1,0 +1,8 @@
+.message {
+  color: var(--pp-text-secondary);
+  @include text('sm');
+
+  strong {
+    color: var(--pp-text);
+  }
+}

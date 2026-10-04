@@ -1,0 +1,39 @@
+/* Tailwind stays in plain CSS: v4 does not run through the Sass compiler. */
+@import 'tailwindcss';
+
+/* `dark:` utilities follow the explicit theme attribute. */
+@custom-variant dark (&:where([data-theme='dark'], [data-theme='dark'] *));
+
+/*
+ * Map Tailwind's theme onto the design tokens (inline = utilities reference the CSS variables,
+ * so they switch with light/dark). Use Tailwind for layout and spacing; components own their look.
+ */
+@theme inline {
+  --font-sans: var(--pp-font-body);
+  --font-heading: var(--pp-font-heading);
+  --font-mono: var(--pp-font-mono);
+
+  --color-page: var(--pp-bg-page);
+  --color-surface: var(--pp-bg-surface);
+  --color-surface-alt: var(--pp-bg-surface-alt);
+  --color-border: var(--pp-border);
+  --color-heading: var(--pp-text-heading);
+  --color-body: var(--pp-text);
+  --color-secondary: var(--pp-text-secondary);
+  --color-muted: var(--pp-text-muted);
+  --color-primary: var(--pp-primary);
+  --color-primary-subtle: var(--pp-primary-subtle);
+  --color-success: var(--pp-success);
+  --color-warning: var(--pp-warning);
+  --color-danger: var(--pp-danger);
+  --color-info: var(--pp-info);
+
+  --radius-sm: var(--pp-radius-sm);
+  --radius-md: var(--pp-radius-md);
+  --radius-lg: var(--pp-radius-lg);
+  --radius-xl: var(--pp-radius-xl);
+
+  --shadow-sm: var(--pp-shadow-sm);
+  --shadow-md: var(--pp-shadow-md);
+  --shadow-lg: var(--pp-shadow-lg);
+}

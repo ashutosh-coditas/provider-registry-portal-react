@@ -1,0 +1,64 @@
+// Tier 1 · Primitives: raw palette values (Coditas palette). Never use these in components;
+// use the semantic tokens in _theme.scss so light/dark switching works.
+
+:root {
+  --pp-purple-25: #faf6ff;
+  --pp-purple-50: #eff1ff;
+  --pp-purple-100: #e7e9fe;
+  --pp-purple-200: #d4d6fd;
+  --pp-purple-300: #b3b6fb;
+  --pp-purple-400: #999bfa;
+  --pp-purple-500: #7f80f8;
+  --pp-purple-600: #6b6cf7;
+  --pp-purple-700: #5d5df6;
+  --pp-purple-800: #4b4bcf;
+  --pp-purple-900: #3a3aa6;
+  --pp-purple-950: #24246a;
+
+  --pp-graphite-25: #fafafa;
+  --pp-graphite-50: #f6f6f6;
+  --pp-graphite-100: #e7e7e7;
+  --pp-graphite-200: #d1d1d1;
+  --pp-graphite-300: #b0b0b0;
+  --pp-graphite-400: #888888;
+  --pp-graphite-500: #6d6d6d;
+  --pp-graphite-600: #5d5d5d;
+  --pp-graphite-700: #4f4f4f;
+  --pp-graphite-900: #3d3d3d;
+  --pp-graphite-950: #262626;
+
+  --pp-green-50: #f0fdf4;
+  --pp-green-200: #bbf7d0;
+  --pp-green-400: #4ade80;
+  --pp-green-600: #16a34a;
+  --pp-green-700: #15803d;
+  --pp-green-950: #053e16;
+
+  --pp-red-50: #fef2f2;
+  --pp-red-200: #fecaca;
+  --pp-red-300: #fca5a5;
+  --pp-red-400: #f87171;
+  --pp-red-600: #dc2626;
+  --pp-red-700: #b91c1c;
+  --pp-red-800: #991b1b;
+  --pp-red-950: #450a0a;
+
+  --pp-amber-50: #fffbeb;
+  --pp-amber-200: #fde68a;
+  --pp-amber-400: #fbbf24;
+  --pp-amber-500: #f59e0b;
+  --pp-amber-700: #b45309;
+  --pp-amber-950: #451a03;
+
+  --pp-blue-50: #eff6ff;
+  --pp-blue-200: #bfdbfe;
+  --pp-blue-400: #60a5fa;
+  --pp-blue-700: #1d43d8;
+  --pp-blue-950: #172554;
+
+  --pp-white: #ffffff;
+  --pp-black: #000000;
+
+  --pp-gradient-brand: linear-gradient(135deg, #ab00ff 0%, #00c8eb 100%);
+  --pp-gradient-brand-hover: linear-gradient(135deg, #9900e6 0%, #00b4d4 100%);
+}

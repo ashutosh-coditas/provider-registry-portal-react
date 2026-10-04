@@ -1,0 +1,90 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--pp-space-6);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--pp-space-1);
+}
+
+.title {
+  @include heading('h3');
+}
+
+.subtitle {
+  color: var(--pp-text-secondary);
+  @include text('sm');
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--pp-space-5);
+}
+
+.footer {
+  color: var(--pp-text-secondary);
+  text-align: center;
+  @include text('sm');
+
+  a {
+    font-weight: var(--pp-font-semibold);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.demo {
+  padding-top: var(--pp-space-4);
+  border-top: 1px dashed var(--pp-border-strong);
+  @include text('xs');
+
+  summary {
+    color: var(--pp-text-secondary);
+    font-weight: var(--pp-font-medium);
+    cursor: pointer;
+  }
+}
+
+.demoList {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin: var(--pp-space-2) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.demoButton {
+  @include reset-button;
+  display: flex;
+  justify-content: space-between;
+  gap: var(--pp-space-2);
+  width: 100%;
+  padding: 6px var(--pp-space-2);
+  border-radius: var(--pp-radius-sm);
+  text-align: left;
+
+  code {
+    color: var(--pp-primary-text);
+    font-family: var(--pp-font-mono);
+  }
+
+  span {
+    color: var(--pp-text-secondary);
+  }
+
+  &:hover {
+    background: var(--pp-bg-hover);
+  }
+
+  &:focus-visible {
+    @include focus-ring;
+  }
+}

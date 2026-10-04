@@ -1,0 +1,59 @@
+.toast {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--pp-space-3);
+  width: 100%;
+  padding: var(--pp-space-3) var(--pp-space-2) var(--pp-space-3) var(--pp-space-4);
+  border: 1px solid var(--pp-border);
+  border-radius: var(--pp-radius-lg);
+  background: var(--pp-bg-surface);
+  box-shadow: var(--pp-shadow-lg);
+  pointer-events: auto;
+  animation: toast-in var(--pp-duration-slow) var(--pp-ease);
+}
+
+.icon {
+  flex-shrink: 0;
+  margin-top: 6px;
+}
+
+.body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+  padding-top: 5px;
+}
+
+.title {
+  color: var(--pp-text);
+  @include text('sm', var(--pp-font-semibold));
+}
+
+.message {
+  color: var(--pp-text-secondary);
+  @include text('sm');
+}
+
+.success .icon {
+  color: var(--pp-success);
+}
+
+.error .icon {
+  color: var(--pp-danger);
+}
+
+.warning .icon {
+  color: var(--pp-warning);
+}
+
+.info .icon {
+  color: var(--pp-info);
+}
+
+@keyframes toast-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+}

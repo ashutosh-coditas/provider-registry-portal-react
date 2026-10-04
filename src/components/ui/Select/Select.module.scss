@@ -1,0 +1,28 @@
+.wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.select {
+  @include control;
+  padding-right: 36px;
+  appearance: none;
+  cursor: pointer;
+
+  // Placeholder option reads as placeholder text
+  &:has(option[value='']:checked) {
+    color: var(--pp-text-muted);
+  }
+
+  option {
+    color: var(--pp-text);
+  }
+}
+
+.chevron {
+  position: absolute;
+  right: 12px;
+  color: var(--pp-text-secondary);
+  pointer-events: none;
+}

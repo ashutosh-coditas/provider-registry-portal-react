@@ -1,0 +1,42 @@
+.wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  @include control;
+
+  // Native date picker icon follows the theme
+  &::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    opacity: 0.6;
+  }
+
+  // SearchField renders its own clear button
+  &::-webkit-search-cancel-button {
+    appearance: none;
+  }
+}
+
+.hasLeftIcon {
+  padding-left: 38px;
+}
+
+.hasRightSlot {
+  padding-right: 44px;
+}
+
+.leftIcon {
+  position: absolute;
+  left: 12px;
+  color: var(--pp-text-muted);
+  pointer-events: none;
+}
+
+.rightSlot {
+  position: absolute;
+  right: 4px;
+  display: flex;
+  align-items: center;
+}

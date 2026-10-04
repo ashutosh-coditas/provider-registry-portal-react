@@ -1,0 +1,70 @@
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--pp-space-2);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.inline {
+  max-width: 420px;
+  padding: var(--pp-space-10) var(--pp-space-4);
+
+  .title {
+    @include heading('h5');
+  }
+}
+
+.page {
+  max-width: 520px;
+  padding: var(--pp-space-12) var(--pp-space-4);
+
+  .iconBadge {
+    width: 88px;
+    height: 88px;
+    margin-bottom: var(--pp-space-3);
+  }
+
+  .title {
+    @include heading('h3');
+  }
+}
+
+.iconBadge {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  margin-bottom: var(--pp-space-2);
+  border-radius: var(--pp-radius-full);
+}
+
+.primary {
+  background: var(--pp-primary-subtle);
+  color: var(--pp-primary);
+}
+
+.success {
+  background: var(--pp-success-subtle);
+  color: var(--pp-success);
+}
+
+.danger {
+  background: var(--pp-danger-subtle);
+  color: var(--pp-danger);
+}
+
+.description {
+  max-width: 48ch;
+  color: var(--pp-text-secondary);
+  @include text('sm');
+}
+
+.action {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--pp-space-3);
+  margin-top: var(--pp-space-4);
+}

@@ -1,0 +1,1 @@
+export { DiplomatDashboardPage } from './DiplomatDashboard'

@@ -2,7 +2,7 @@
 
 A React registry where doctors register, complete a 4-step certification, and recertify every 3 years. It is frontend only: all data is mocked in `localStorage`.
 
-The full spec, rules and architecture are in [CONTEXT.md](CONTEXT.md).
+The full spec, rules and architecture are in [CONTEXT.md](CONTEXT.md). The conversation in which the project was specified and built is in [CHAT_EXPORT.md](CHAT_EXPORT.md).
 
 ## Getting started
 
